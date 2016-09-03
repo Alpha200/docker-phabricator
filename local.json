@@ -1,7 +1,10 @@
 {
       "storage.default-namespace": "default",
-      "mysql.host": "{{MYSQL_HOST}}",
-      "mysql.user": "{{MYSQL_USER}}",
-      "mysql.pass": "{{MYSQL_PASS}}",
-      "pygments.enabled": true
+      "mysql.host": "database",
+      "mysql.user": "root",
+      "mysql.pass": "phabricator",
+      "pygments.enabled": true,
+      "phd.user": "root",
+      "diffusion.ssh-user": "git",
+      "phabricator.base-uri": "http://phabricator.example.com:8080/"
 }

@@ -1,15 +1,16 @@
-
-#
-# Optional Volumes:
-#  - /opt/phabricator/conf - configuration
-#  - /var/repo - code repos
-#
-#
 phabricator:
-    build: .
-    links: ['database']
-    ports: ['8081:80']
-
+  build: .
+  links:
+    - database
+  ports: ['8080:80', '22222:22']
+  volumes:
+    - "./ssh:/opt/ssh-keys"
+    - "./repo:/var/repo"
 
 database:
-    build: database/
+  image: mariadb
+  volumes:
+    - "./database/config:/etc/mysql/conf.d"
+    - "./database/sql:/docker-entrypoint-initdb.d"
+  environment:
+    - MYSQL_ROOT_PASSWORD=phabricator

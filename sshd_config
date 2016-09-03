@@ -1,0 +1,21 @@
+AuthorizedKeysCommand /opt/phabricator-ssh-hook.sh
+AuthorizedKeysCommandUser git
+AllowUsers git
+
+Port 22
+Protocol 2
+
+HostKey /opt/ssh-keys/ssh_host_rsa_key
+HostKey /opt/ssh-keys/ssh_host_dsa_key
+HostKey /opt/ssh-keys/ssh_host_ecdsa_key
+HostKey /opt/ssh-keys/ssh_host_ed25519_key
+
+PermitRootLogin no
+AllowAgentForwarding no
+AllowTcpForwarding no
+PrintMotd no
+PrintLastLog no
+PasswordAuthentication no
+AuthorizedKeysFile none
+
+PidFile /var/run/sshd-phabricator.pid
