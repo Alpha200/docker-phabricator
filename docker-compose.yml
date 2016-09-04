@@ -11,6 +11,6 @@ database:
   image: mariadb
   volumes:
     - "./database/config:/etc/mysql/conf.d"
-    - "./database/sql:/docker-entrypoint-initdb.d"
+    - "./database/data:/var/lib/mysql"
   environment:
     - MYSQL_ROOT_PASSWORD=phabricator
