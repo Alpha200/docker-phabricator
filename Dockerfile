@@ -1,13 +1,9 @@
-#
-# Docker image for running https://github.com/phacility/phabricator
-#
+FROM debian:jessie
 
-FROM    debian:jessie
 MAINTAINER  Daniel Sendzik <d.sendzik@gmail.com>
 
 ENV DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true
 
-# TODO: review this dependency list
 RUN     apt-get clean && apt-get update && apt-get install -y \
 	        git \
           apache2 \

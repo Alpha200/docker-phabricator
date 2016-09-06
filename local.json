@@ -1,8 +1,7 @@
 {
-      "storage.default-namespace": "default",
       "mysql.host": "database",
-      "mysql.user": "root",
-      "mysql.pass": "phabricator",
+      "mysql.user": "phabricator",
+      "mysql.pass": "1pS0kzIOCUkr4kvk",
       "pygments.enabled": true,
       "phd.user": "root",
       "diffusion.ssh-user": "git",

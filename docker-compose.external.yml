@@ -1,0 +1,11 @@
+version: '2'
+services:
+  phabricator:
+    external_links:
+      - database
+    networks:
+      - mariadb
+networks:
+  mariadb:
+    external: 
+      name: 'mariadb_default'

@@ -1,16 +1,10 @@
-phabricator:
-  build: .
-  links:
-    - database
-  ports: ['8080:80', '22222:22']
-  volumes:
-    - "./ssh:/opt/ssh-keys"
-    - "./repo:/var/repo"
-
-database:
-  image: mariadb
-  volumes:
-    - "./database/config:/etc/mysql/conf.d"
-    - "./database/data:/var/lib/mysql"
-  environment:
-    - MYSQL_ROOT_PASSWORD=phabricator
+version: '2'
+services:
+  phabricator:
+    build: .
+    ports: 
+      - '8080:80'
+      - '22222:22'
+    volumes:
+      - "./ssh:/opt/ssh-keys"
+      - "./repo:/var/repo"

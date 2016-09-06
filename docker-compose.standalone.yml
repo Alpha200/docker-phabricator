@@ -1,0 +1,12 @@
+version: '2'
+services:
+  phabricator:
+    links:
+      - database
+  database:
+    image: mariadb
+    volumes:
+      - "./database/config:/etc/mysql/conf.d"
+      - "./database/data:/var/lib/mysql"
+    environment:
+      - MYSQL_ROOT_PASSWORD=phabricator 
